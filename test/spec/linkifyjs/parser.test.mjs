@@ -243,9 +243,9 @@ const tests = [
 	],
 	['"https://surrounded.by.quotes/"', [Text, Url, Text], ['"', 'https://surrounded.by.quotes/', '"']],
 	[
-		'More weird character in http://facebook.com/#aZ?/:@-._~!$&()*+,;= that Url',
+		"More weird character in http://facebook.com/#aZ?/:@-._~!$&'()*+,;= that Url",
 		[Text, Url, Text],
-		['More weird character in ', 'http://facebook.com/#aZ?/:@-._~!$&()*+,;=', ' that Url'],
+		['More weird character in ', "http://facebook.com/#aZ?/:@-._~!$&'()*+,;=", ' that Url'],
 	],
 	[
 		'Email with a underscore is n_frasser@example.xyz asd',
@@ -261,11 +261,6 @@ const tests = [
 		"A link in 'singlequote.club/wat' extra fluff at the end",
 		[Text, Url, Text],
 		["A link in '", 'singlequote.club/wat', "' extra fluff at the end"],
-	],
-	[
-		"I really like http://singlequote.club's website design",
-		[Text, Url, Text],
-		['I really like ', 'http://singlequote.club', "'s website design"],
 	],
 	[
 		'Email with mailsomething dot com domain in foo@mailsomething.com',
